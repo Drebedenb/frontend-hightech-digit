@@ -1,7 +1,15 @@
 import './App.css';
 import Header from "./modules/Header.jsx";
+import {useState} from "react"
 
 function App() {
+    const [likes, setLikes] = useState(0);
+    function increment(){
+        setLikes(likes + 1);
+    }
+    function decrement(){
+        setLikes(likes - 1);
+    }
     return (
         <div className="App">
             <Header/>
@@ -16,9 +24,12 @@ function App() {
                         <p className="lead">Quickly design and customize responsive mobile-first sites with Bootstrap,
                             the world’s most popular front-end open source toolkit, featuring Sass variables and mixins,
                             responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+
+                        <p>Likes: {likes}</p>
+
                         <div className="d-grid gap-2 d-md-flex justify-content-md-start">
-                            <button type="button" className="btn btn-primary btn-lg px-4 me-md-2">Primary</button>
-                            <button type="button" className="btn btn-outline-secondary btn-lg px-4">Default</button>
+                            <button type="button" onClick={increment} className="btn btn-primary btn-lg px-4 me-md-2">Increment</button>
+                            <button type="button" onClick={decrement} className="btn btn-outline-secondary btn-lg px-4">Decrement</button>
                         </div>
                     </div>
                 </div>
