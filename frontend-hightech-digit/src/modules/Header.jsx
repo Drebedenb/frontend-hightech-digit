@@ -1,4 +1,5 @@
 import React from 'react';
+import {NavLink} from "react-router-dom";
 
 const Header = () => {
     return (
@@ -27,8 +28,8 @@ const Header = () => {
                         </form>
 
                         <div className="text-end">
-                            <button type="button" className="btn btn-outline-light me-2">Login</button>
-                            <button type="button" className="btn btn-warning">Sign-up</button>
+                            <NavLink to="/login" className="btn btn-outline-light me-2">Login</NavLink>
+                            <NavLink to="/login" type="button" className="btn btn-warning">Sign-up</NavLink>
                         </div>
                     </div>
                 </div>
