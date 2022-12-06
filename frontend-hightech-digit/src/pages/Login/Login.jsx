@@ -56,22 +56,28 @@ const Login = () => {
                 <div className="Auth-form-content">
                     <img className="rounded mx-auto d-block" src={logo} alt=""/>
                     <h3 className="Auth-form-title">Sign In</h3>
-                    <div className="form-group mt-3">
-                        <label>Email address</label>
+
+                    <div className="form-floating mb-1">
                         <input
+                            onChange={event => setLogin(event.target.value)}
                             type="email"
-                            className="form-control mt-1"
-                            placeholder="Enter email"
+                            className="form-control"
+                            id="floatingInput"
+                            placeholder="name@example.com"
                         />
+                        <label htmlFor="floatingInput">Email address</label>
                     </div>
-                    <div className="form-group mt-3">
-                        <label>Password</label>
+                    <div className="form-floating">
                         <input
-                            type="password"
-                            className="form-control mt-1"
-                            placeholder="Enter password"
+                            onChange={event => setPassword(event.target.value)}
+                            type="email"
+                            className="form-control"
+                            id="floatingPassword"
+                            placeholder="Password"
                         />
+                        <label htmlFor="floatingInput">Password</label>
                     </div>
+
                     <div className="d-grid gap-2 mt-3">
                         <button type="submit" className="btn btn-primary">
                             Submit
