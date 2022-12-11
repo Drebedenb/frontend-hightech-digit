@@ -13,18 +13,17 @@ const Cards = () => {
 
     function addCard(card) {
         setCards([card, ...cards]);
-    };
+    }
 
     function deleteCard(id) {
-
-    };
+        setCards(cards.filter(item => item.id !== id));
+    }
 
     function handler(e) {
         e.preventDefault();
         addCard({id: Date.now(), ...newCard});
         setCard({name: "", price: ""});
-    };
-
+    }
     return (
         <div>
             <h1 className="mt-5">List of products</h1>
@@ -40,7 +39,7 @@ const Cards = () => {
                     Send
                 </button>
             </form>
-            {cards.map(item => <Card post={item} key={item.id}/>)}
+            {cards.map(item => <Card post={item} deleteCard={deleteCard} key={item.id}/>)}
         </div>
     );
 };

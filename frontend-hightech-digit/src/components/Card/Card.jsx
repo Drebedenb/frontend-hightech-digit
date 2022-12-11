@@ -1,8 +1,9 @@
-import React, {useState} from 'react';
+import React from 'react';
 
-const Card = ({post, key}) => {
+const Card = ({post, deleteCard}) => {
     const name = post.name;
     const price = post.price;
+    const id = post.id;
 
     return (
         <div className="container col-xxl-8 px-4 py-5">
@@ -17,7 +18,7 @@ const Card = ({post, key}) => {
 
                     <div className="d-grid gap-2 d-md-flex justify-content-md-start">
                         <button type="button" className="btn btn-primary btn-lg px-4 me-md-2">Buy</button>
-                        <button type="button" className="btn btn-outline-secondary btn-lg px-4">Delete</button>
+                        <button onClick={() => deleteCard(id)} type="button" className="btn btn-outline-secondary btn-lg px-4">Delete</button>
                     </div>
                 </div>
             </div>
