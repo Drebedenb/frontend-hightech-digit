@@ -1,15 +1,9 @@
 import React, {useState} from 'react';
 
-const Card = ({post}) => {
-    const [likes, setLikes] = useState(0);
-    function increment(){
-        setLikes(likes + 1);
-    }
-    function decrement(){
-        setLikes(likes - 1);
-    }
-    let name = post.name;
-    let price = post.price;
+const Card = ({post, key}) => {
+    const name = post.name;
+    const price = post.price;
+
     return (
         <div className="container col-xxl-8 px-4 py-5">
             <div className="row flex-lg-row-reverse align-items-center g-5 py-5">
@@ -21,11 +15,9 @@ const Card = ({post}) => {
                     <h1 className="display-5 fw-bold lh-1 mb-3">{name}</h1>
                     <p className="lead">Your new {name} by {price}!</p>
 
-                    <p>Likes: {likes}</p>
-
                     <div className="d-grid gap-2 d-md-flex justify-content-md-start">
-                        <button type="button" onClick={increment} className="btn btn-primary btn-lg px-4 me-md-2">Increment</button>
-                        <button type="button" onClick={decrement} className="btn btn-outline-secondary btn-lg px-4">Decrement</button>
+                        <button type="button" className="btn btn-primary btn-lg px-4 me-md-2">Buy</button>
+                        <button type="button" className="btn btn-outline-secondary btn-lg px-4">Delete</button>
                     </div>
                 </div>
             </div>
