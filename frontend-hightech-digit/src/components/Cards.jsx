@@ -1,15 +1,11 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import Card from "./Card/Card";
 import MySelect from "../UI/MySelect/MySelect";
 import Form from "./Form/Form";
+import {ProductsContext} from "../App";
 
 const Cards = () => {
-    let [cards, setCards] = useState([
-        {id: 1, name: "phone", price: 500},
-        {id: 2, name: "notebook", price: 1000},
-        {id: 3, name: "pc", price: 1000},
-        {id: 4, name: "digital watch", price: 200}
-    ]);
+    const {cards, setCards} = useContext(ProductsContext);
 
     function addCard(card) {
         setCards([card, ...cards]);
